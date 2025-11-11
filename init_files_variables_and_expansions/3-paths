@@ -1,0 +1,1 @@
+echo '%s\n' "$PATH" | tr ':' '\n' | grep -v '^$' | wc -l
