@@ -1,2 +1,2 @@
-#!/bash/bin
-printf '%s\n' "$PATH" | tr ':' '\n' | grep -v '^$' | wc -l
+#!/bin/bash
+echo '%s\n' "$PATH" | tr ':' '\n' | grep -v '^$' | wc -l
