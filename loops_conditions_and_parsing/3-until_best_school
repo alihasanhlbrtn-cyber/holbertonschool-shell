@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# C like until
+i=0
+until (( i==10)); do
+	echo "Best School"
+	((i++))
+done
