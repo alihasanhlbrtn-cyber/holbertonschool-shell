@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# C-like script
+i=0
+while (( i < 10 )); do
+  if (( i == 8 )); then
+    echo "good luck"
+  elif (( i == 4 )); then
+    echo "bad luck"
+  else
+    echo "Best School"
+  fi
+  ((i++))
+done
+
