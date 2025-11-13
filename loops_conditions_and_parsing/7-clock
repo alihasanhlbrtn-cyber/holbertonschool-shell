@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# C-like script
+i=0
+while (( i <= 12 )); do
+	echo "Hour: "${i}""
+	b=1
+	while((b<=59)); do
+	echo "${b}"
+	((b++))
+	done
+	((i++))
+done
+
