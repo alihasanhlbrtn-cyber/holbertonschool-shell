@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+PID_FILE="/var/run/myscript.pid"
+
+echo $$ > "$PID_FILE"
+
+cleanup() {
+  rm -f "$PID_FILE"
+  exit
+}
+
+trap 'echo "Y U no love me?!";' SIGINT
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
+trap 'cleanup' SIGQUIT
+
+while true
+do
+  echo "To infinity and beyond"
+  sleep 2
+done
+
