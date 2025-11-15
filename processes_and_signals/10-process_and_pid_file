@@ -1,17 +1,22 @@
 #!/usr/bin/env bash
-#Process and PID file 
-PID_FILE="/var/run/myscript.pid"
+#Process and PID
 
-echo $$ > "$PID_FILE"
+echo $$ > /var/run/myscript.pid
 
-cleanup() {
-  rm -f "$PID_FILE"
+term_handler() {
+  echo "I hate the kill command"
+  rm -f /var/run/myscript.pid
   exit
 }
 
-trap 'echo "Y U no love me?!";' SIGINT
-trap 'echo "I hate the kill command"; cleanup' SIGTERM
-trap 'cleanup' SIGQUIT
+quit_handler() {
+  rm -f /var/run/myscript.pid
+  exit
+}
+
+trap 'echo "Y U no love me?!";' INT
+trap term_handler TERM
+trap quit_handler QUIT
 
 while true
 do
