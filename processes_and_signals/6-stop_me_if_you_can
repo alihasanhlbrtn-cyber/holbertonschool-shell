@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-#Listing all the processes been doing by users
-ps waux | grep '4-to_infinity_and_beyond' | wc -l | head -c 1
+# 6-stop_me_if_you_can
+pkill -f 4-to_infinity_and_beyond
+
