@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Listing all the processes been doing by users
+# shellcheck disable=SC2009
+ps auxf | grep bash
